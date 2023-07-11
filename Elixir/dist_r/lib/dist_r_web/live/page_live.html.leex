@@ -1,0 +1,66 @@
+
+<section >
+  <header class="py-8 border-b border-gray-100">
+    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+    <div class="flex items-center flex-shrink-0 text-black mr-6">
+      <span class="font-semibold text-xl tracking-tight">DistR</span>
+    </div>
+
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+        <a href="/dashboard/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-blue mr-4">
+          Live Dashboard
+        </a>
+      </div>
+    </div>
+  </nav>
+  </header>
+  <div  class="relative overflow-x-auto shadow-md sm:rounded-lg" >
+
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">User</th>
+              <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">Token</th>
+              <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">Status</th>
+              <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">Start time</th>
+              <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">End time</th>
+              <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">Node</th>
+
+            </tr>
+          </thead>
+          <tbody class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <%= unless @table == [] do %>
+            <%= for i <- @table do %>
+            <tr>
+              <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <%= i.user %>
+              </td>
+              <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <%= i.token %>
+              </td>
+              <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <%= i.state %>
+              </td>
+              <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= i.start_time %>
+              </td>
+              <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= i.end_time %>
+              </td>
+              <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= i.node %>
+              </td>
+
+            </tr>
+            <% end %>
+          <% end %>
+          </tbody>
+        </table>
+
+  </div>
+
+
+
+
+</section
