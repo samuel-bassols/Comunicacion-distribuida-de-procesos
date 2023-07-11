@@ -1,0 +1,14 @@
+#------------------NODES---------------------
+n_nodes "3"
+
+#------------------WEB-----------------------
+
+start_dir "http://192.168.1.34/execute"
+finished_dir "http://192.168.1.34/ready"
+web_page "http://192.168.1.34/"
+
+#----------------DIRECTORIES-----------------
+out_dir "sftp://192.168.1.34/sftpuser/out/"
+in_dir "sftp://192.168.1.34/sftpuser/in/"
+userpass "sftpuser:password2023"
+user Usuario2

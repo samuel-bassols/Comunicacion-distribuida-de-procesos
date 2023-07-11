@@ -1,0 +1,42 @@
+---
+title: "test Tapply"
+output: html_document
+date: "2023-07-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#1. Setup configuration
+
+
+```{r}
+devtools::load_all()
+setupWorkspace(filePath="/home/ubuntu/TFG/R/distR/configuration.txt")
+```
+
+```{r}
+data_set <- data.frame(
+  price = round(rnorm(25, sd = 10, mean = 30)),
+  type = sample(1:4, size = 25, replace = TRUE),
+  store = sample(paste("Store", 1:4),
+                 size = 25, replace = TRUE)
+)
+price <- data_set$price
+store <- data_set$store
+type <- factor(data_set$type,
+               labels = c("toy", "food", "electronics", "drinks"))
+
+
+```
+
+
+```{r}
+price <- data_set$price
+type <- factor(data_set$type,
+               labels = c("toy", "food", "electronics", "drinks"))
+token<-distTApply(price,INDEX=type,FUN=mean)
+c<-getResults(token)
+tap<-tapply(price,type,mean)
+```

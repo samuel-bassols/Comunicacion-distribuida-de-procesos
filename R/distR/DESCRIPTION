@@ -1,0 +1,23 @@
+Package: distR
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Samuel Sjur Bassols Citores
+Maintainer: The package maintainer <samuelsjur.bassols@uva.es>
+Description: Distributed system for computations. This package allows for 
+    distributed computations in R's apply family of functions as well as 
+    distributed computations writen by the user.This packages is to be used in
+    the client node when the worker nodes have been set up.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports:
+	uuid,
+	httr,
+	RCurl,
+	abind
+RoxygenNote: 7.2.3
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
